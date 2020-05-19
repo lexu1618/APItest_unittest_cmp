@@ -1,0 +1,4 @@
+test_login
+#test_select_his
+#test_select_real
+#register

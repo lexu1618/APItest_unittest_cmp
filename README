@@ -1,0 +1,4 @@
+# 该框架用的是 unittest+ddt+request+反射+pandas
+
+#执行多用例的方法是写多个测试模块，然后在run.py中加载
+
