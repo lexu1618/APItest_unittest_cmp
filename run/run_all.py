@@ -36,6 +36,7 @@ class AllTest:
                     # self.case_list.append(data)
 
             return self.case_list
+
     def set_case_suite(self):
 
         self.set_case_list()#通过set_case_list()拿到caselist元素组
