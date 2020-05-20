@@ -41,10 +41,11 @@ class DoRegx:
         #     value = re.search('\$\{(.*?)\}',s).group(1)
         #     s = s.replace(key,str(getattr(GetData,value)))
 
-
         res = re.findall(PATTERN,s)
         for item in range(len(res)):
             s = s.replace("${"+res[item]+"}", str(getattr(GetData, res[item])))
+                                            # 也可以把要替换的数据写到config中，这里就换成读取配置文件的写法
+
         return s
 if __name__ == '__main__':
     s = '{"username":"${admin_user}","password":"${admin_passwd}"}'

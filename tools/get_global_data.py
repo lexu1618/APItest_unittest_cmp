@@ -10,7 +10,8 @@ class GetData:
 
     admin_passwd = pd.read_excel(test_case_data_path,sheet_name="init").iloc[2,1]
 
-
+    url = '172.16.20.25'
+    port = '82'
 
 if __name__ == '__main__':
     # setattr(GetData,"Cookie","123456")

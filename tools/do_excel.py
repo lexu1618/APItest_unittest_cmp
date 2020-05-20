@@ -1,7 +1,7 @@
 import pandas as pd
 from openpyxl import load_workbook
 from config.project_path import *
-from tools.get_global_data import GetData
+
 from tools.read_config import ReadConfig
 from tools.do_regx import DoRegx
 
@@ -22,7 +22,11 @@ class DoExcel:
                 row_data["case_id"] = sheet.cell(case_id, int(ReadConfig.get_test_data("case_id"))).value
                 row_data["module"] = sheet.cell(case_id,int( ReadConfig.get_test_data("module"))).value
                 row_data["title"] = sheet.cell(case_id, int(ReadConfig.get_test_data("title"))).value
-                row_data["url"] = sheet.cell(case_id, int(ReadConfig.get_test_data("url"))).value
+                # row_data["url"] = sheet.cell(case_id, int(ReadConfig.get_test_data("url"))).value
+                #正则替换
+                row_data["url"] = DoRegx.do_regx(
+                    sheet.cell(case_id, int(ReadConfig.get_test_data("url"))).value)
+
                 # row_data["data"] = sheet.cell(case_id,int(ReadConfig.get_test_data("request_data"))).value
                 #非正则字串符替换
                 #替换管理员账户
