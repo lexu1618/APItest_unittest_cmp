@@ -39,3 +39,4 @@ if __name__ == '__main__':
     print(ReadConfig.get_sql())
     print(type(ReadConfig.get_test_data("case_id")))
     print(ReadConfig.get_regx())
+    print(type(ReadConfig.get_test_data("module")))
