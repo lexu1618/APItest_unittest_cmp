@@ -80,7 +80,7 @@ class TestSelectHis(unittest.TestCase):
                                  int(ReadConfig.get_test_data("test_result")), TestResult)
             my_logger.info("获取到的结果是:{0}".format(res.json()))
             my_logger.info("用例{0}执行结束".format(item["case_id"]))
-
+            my_logger.info("*" * 40)
 
     def tearDown(self):
         pass
