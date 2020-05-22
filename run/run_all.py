@@ -1,6 +1,6 @@
 import unittest
 from libs.HTMLTestRunnerNew import HTMLTestRunner
-from config.project_path import *
+from dataconfig.project_path import *
 
 # from testcase.test_login import TestLogin
 # from testcase.test_select_his import TestSelectHis
@@ -31,7 +31,6 @@ class AllTest:
                 data = str(value)
                 print(data)
                 if data != '' and not data.startswith("#"):  # 如果data非空且不以#开头
-
                     self.case_list.append(data.replace("\n", ""))  # 读取每行数据会将换行转换为\n，去掉每行数据中的\n
                     # self.case_list.append(data)
 

@@ -1,6 +1,6 @@
 import pandas as pd
 from openpyxl import load_workbook
-from config.project_path import *
+from dataconfig.project_path import *
 
 from tools.read_config import ReadConfig
 from tools.do_regx import DoRegx

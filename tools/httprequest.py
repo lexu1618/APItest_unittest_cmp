@@ -1,6 +1,5 @@
 import requests
-
-from config.project_path import *
+from dataconfig.project_path import *
 from tools.my_log import MyLog
 my_logger = MyLog()
 

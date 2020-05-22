@@ -1,7 +1,7 @@
 import pymssql
 import json
 from tools.read_config import ReadConfig
-from config.project_path import *
+from dataconfig.project_path import *
 
 
 class DoDatabase:

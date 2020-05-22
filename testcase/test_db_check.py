@@ -1,9 +1,9 @@
 import unittest
-from tools.http_requests import Http_Request
-from tools.get_data import GetData
+from tools.httprequest import HttpRequest
+from tools.get_global_data import GetData
 from ddt import ddt,data  #列表嵌套列表或者列表嵌套字典适合用ddt
 from tools.do_excel import DoExcel
-from config.project_path import *
+from dataconfig.project_path import *
 from tools.do_database import DoDatabase
 from tools.my_log import MyLog
 from tools.read_config import ReadConfig
@@ -71,7 +71,7 @@ class TestHttpRequest(unittest.TestCase):
 
             #自己检查，这里数据的金额格式是两位小数，是否会有问题，数据库中存储的类型！！！！
             my_logger.info("----------------开始HTTP请求----------------")
-            res = Http_Request.http_request(item["url"], eval(item["data"]), item["http_method"],
+            res = HttpRequest.http_request(item["url"], eval(item["data"]), item["http_method"],
                                             getattr(GetData, "Cookie"))
             my_logger.info("---------------完成HTTP请求----------------")
             ##请求之后账户的余额
@@ -93,7 +93,7 @@ class TestHttpRequest(unittest.TestCase):
         else:
             my_logger.info("此条用例不做数据库校验{0}".format(item["title"]))
             my_logger.info("----------------开始HTTP请求----------------")
-            res = Http_Request.http_request(item["url"], eval(item["data"]), item["http_method"],
+            res = HttpRequest.http_request(item["url"], eval(item["data"]), item["http_method"],
                                             getattr(GetData, "Cookie"))
             my_logger.info("---------------完成HTTP请求----------------")
 

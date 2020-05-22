@@ -1,5 +1,5 @@
 import configparser
-from config.project_path import *
+from dataconfig.project_path import *
 
 cf = configparser.ConfigParser()
 cf.read(config_path,encoding="utf-8")

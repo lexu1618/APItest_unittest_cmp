@@ -3,7 +3,7 @@ import unittest
 from tools.get_global_data import GetData
 from libs.ddt import ddt,data    #列表嵌套字典、列表嵌套列表
 from tools.do_excel import DoExcel
-from config.project_path import *
+from dataconfig.project_path import *
 from tools.my_log import MyLog
 from tools.read_config import ReadConfig
 
