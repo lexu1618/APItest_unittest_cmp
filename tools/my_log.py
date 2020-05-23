@@ -1,7 +1,7 @@
 #logging日志打印模块
 
 import logging
-from config.project_path import *
+from dataconfig.project_path import *
 
 class MyLog:
     def my_log(self,msg,level):

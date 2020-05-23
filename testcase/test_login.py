@@ -8,8 +8,8 @@ from tools.my_log import MyLog
 from tools.read_config import ReadConfig
 
 my_logger = MyLog()
-
-test_data = DoExcel().get_data(test_case_data_path,"login")
+do_excel = DoExcel(test_case_data_path,"login")
+test_data = do_excel.get_all_data()
 
 
 
@@ -32,8 +32,12 @@ class TestLogin(unittest.TestCase):
             my_logger.error("执行用例出错：{0}".format(e))
             raise e
         finally:#不管对还是错，，finally后面代码都执行
-            DoExcel().write_back(test_case_data_path,"login",item['case_id']+1,int(ReadConfig.get_test_data("result")),str(res.json())) #res 返回的是字典，要转成字符串才能写进EXCEL\
-            DoExcel().write_back(test_case_data_path, "login", item['case_id']+1, int(ReadConfig.get_test_data("test_result")),TestResult)
+            # do_excel.write_back(test_case_data_path,"login",item['case_id']+1,int(ReadConfig.get_test_data("result")),str(res.json())) #res 返回的是字典，要转成字符串才能写进EXCEL\
+            # do_excel.write_back(test_case_data_path, "login", item['case_id']+1, int(ReadConfig.get_test_data("test_result")),TestResult)
+            do_excel.write_back(item['case_id'] + 1,
+                                int(ReadConfig.get_test_data("result")), str(res.json()))  # res 返回的是字典，要转成字符串才能写进EXCEL\
+            do_excel.write_back(item['case_id'] + 1,
+                                int(ReadConfig.get_test_data("test_result")), TestResult)
             my_logger.info("获取到的结果是:{0}".format(res.json()))
             my_logger.info("用例{0}执行结束".format(item["case_id"]))
             my_logger.info("*"*40)
